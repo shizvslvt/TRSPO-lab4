@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.ChoiceBox?>
+
+<AnchorPane prefHeight="600.0" prefWidth="400.0" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.trspolab4.HelloController">
+    <Button onAction="#reconnect" text="Reconnect"/>
+    <TabPane prefWidth="600.0" layoutY="30.0">
+        <Tab text="Users">
+            <VBox>
+                <padding>
+                    <Insets top="10.0"/>
+                </padding>
+                <TableView fx:id="user_table" prefHeight="350.0" prefWidth="580.0">
+                    <columns>
+                        <TableColumn fx:id="user_id" prefWidth="30.0" text="Id"/>
+                        <TableColumn fx:id="user_name" prefWidth="280.0" text="Name"/>
+                        <TableColumn fx:id="user_mail" prefWidth="280.0" text="Language"/>
+                    </columns>
+                </TableView>
+                <VBox spacing="10.0">
+                    <padding>
+                        <Insets top="10.0" left="10.0"/>
+                    </padding>
+                    <HBox spacing="10.0">
+                        <Label fx:id="user_idLabel" text="Id: "/>
+                        <TextField fx:id="user_idTextField"/>
+                    </HBox>
+                    <HBox spacing="10.0">
+                        <Label fx:id="user_nameLabel" text="Name: "/>
+                        <TextField fx:id="user_nameTextField"/>
+                    </HBox>
+                    <HBox spacing="10.0">
+                        <Label fx:id="user_mailLabel" text="Mail: "/>
+                        <TextField fx:id="user_mailTextField"/>
+                    </HBox>
+                    <HBox spacing="10.0">
+                        <Button onAction="#user_createButton" text="Create"/>
+                        <Button onAction="#user_updateButton" text="Update"/>
+                        <Button onAction="#user_deleteButton" text="Delete"/>
+                    </HBox>
+                </VBox>
+            </VBox>
+        </Tab>
+
+        <Tab text="Estate">
+            <VBox>
+                <padding>
+                    <Insets top="10.0"/>
+                </padding>
+                <TableView fx:id="estate_table" prefHeight="350.0" prefWidth="580.0">
+                    <columns>
+                        <TableColumn fx:id="estate_id" prefWidth="40.0" text="ID"/>
+                        <TableColumn fx:id="estate_sellerName" prefWidth="120.0" text="Seller Name"/>
+                        <TableColumn fx:id="title" prefWidth="220.0" text="Title"/>
+                        <TableColumn fx:id="estate_cost" prefWidth="70.0" text="Cost"/>
+                        <TableColumn fx:id="estate_time" prefWidth="130.0" text="Time"/>
+                    </columns>
+                </TableView>
+                <VBox spacing="10.0">
+                    <padding>
+                        <Insets top="10.0" left="10.0"/>
+                    </padding>
+                    <HBox spacing="10.0">
+                        <Label text="ID: "/>
+                        <TextField prefWidth="50" fx:id="estate_idTextField"/>
+                        <Label text="Seller: " />
+                        <ChoiceBox fx:id="estate_sellerChoiceBox" />
+                        <Label text="Cost: "/>
+                        <TextField prefWidth="80" fx:id="estate_costTextField"/>
+                    </HBox>
+                    <HBox spacing="10.0">
+                        <Label text="Title: "/>
+                        <TextField prefWidth="350"  fx:id="titleTextField"/>
+                    </HBox>
+                    <HBox spacing="10.0">
+                        <Label text="Time: "/>
+                        <TextField fx:id="estate_timeTextField"/>
+                    </HBox>
+                    <HBox spacing="10.0">
+                        <Button onAction="#estate_createButton" text="Create"/>
+                        <Button onAction="#estate_updateButton" text="Update"/>
+                        <Button onAction="#estate_deleteButton" text="Delete"/>
+                    </HBox>
+                </VBox>
+
+            </VBox>
+        </Tab>
+    </TabPane>
+</AnchorPane>
