@@ -94,6 +94,7 @@ public class HelloController {
 
     private void estate_read() {
         eCtrl.read(estate_table, estate_id, estate_sellerName, title, estate_cost, estate_time);
+        estate_sellerChoiceBox.setItems(uCtrl.getIdAndNameUsers());
     }
 
     private void estate_autofill() {
@@ -101,7 +102,6 @@ public class HelloController {
             Estate selectedEstate = (Estate) newValue;
             estate_idTextField.setText(String.valueOf(selectedEstate.getId()));
             estate_sellerChoiceBox.setValue(selectedEstate.getSeller());
-            estate_sellerChoiceBox.setItems(uCtrl.getIdAndNameUsers());
             titleTextField.setText(selectedEstate.getTitle());
             estate_costTextField.setText(String.valueOf(selectedEstate.getCost()));
             estate_timeTextField.setText(String.valueOf(selectedEstate.getTime()));
