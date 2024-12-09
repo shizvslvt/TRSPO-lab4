@@ -148,6 +148,7 @@ public class DatabaseController {
         }
     }
 
+
     public void estate_delete(int id) {
         String sql = "DELETE FROM ro_estates WHERE id = ?";
         try (PreparedStatement statement = this.connection.prepareStatement(sql)) {

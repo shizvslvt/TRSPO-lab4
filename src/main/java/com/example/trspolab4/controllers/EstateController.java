@@ -12,13 +12,9 @@ import java.time.LocalDateTime;
 
 public class EstateController {
     private final DatabaseController dbCtrl;
-
     public EstateController(DatabaseController dbCtrl) {
         this.dbCtrl = dbCtrl;
     }
-
-
-
     private final ObservableList<Estate> estate_list = FXCollections.observableArrayList();
 
     public void read(TableView estate_table, TableColumn estate_id, TableColumn estate_sellerName, TableColumn estate_title, TableColumn estate_cost, TableColumn estate_time) {
